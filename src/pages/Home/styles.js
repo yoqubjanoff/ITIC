@@ -17,6 +17,10 @@ export const Container = styled.div`
     height: auto;
     padding: 0 0 60px 15px;
   }
+  @media screen and (max-width: 416px) {
+    height: auto;
+    padding: 0;
+  }
 `;
 
 export const HeadingOneHome = styled.h1`
@@ -27,7 +31,6 @@ export const HeadingOneHome = styled.h1`
   background-size: 1600px 200px;
   -webkit-background-clip: text;
   background-clip: text;
-  /* text-fill-color: transparent; */
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
   animation: textShine 2s linear infinite;

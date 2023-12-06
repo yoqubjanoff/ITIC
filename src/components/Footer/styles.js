@@ -6,10 +6,17 @@ export const Container = styled.div`
   gap: 14px;
   width: 466px;
   height: 18px;
-
+  @media screen and (max-width: 416px) {
+    justify-content: center;
+    width: 291px;
+  }
+  @media screen and (max-width: 416px) {
+    justify-content: center;
+    width: 210px;
+  }
 
   @media screen and (max-width: 653px) {
-    .link:not(:first-child, :last-child){
+    .link:not(:first-child, :last-child) {
       display: none;
     }
   }
@@ -21,5 +28,10 @@ export const Container = styled.div`
     letter-spacing: 0;
     line-height: normal;
     cursor: pointer;
+  }
+  .link-number {
+    @media screen and (max-width: 416px) {
+      display: none;
+    }
   }
 `;

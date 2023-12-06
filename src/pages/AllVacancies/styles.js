@@ -360,6 +360,10 @@ Container.NoAvaivable = styled.div`
   @media screen and (max-width: 840px) {
     padding: 39px 17px 45px 37px;
   }
+  @media screen and (max-width: 416px) {
+    padding: 39px 17px 45px 37px;
+    max-width: 329px;
+  }
   @media screen and (max-width: 370px) {
     padding: 39px 17px 45px 37px;
     max-width: 296px;

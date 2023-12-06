@@ -9,6 +9,9 @@
   top: 300px;
   z-index: 3;
   cursor: pointer;
+  @media screen and (max-width: 360px) {
+    left: 0;
+  }
 }
 
 .burgerBar {
@@ -39,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 36px;
-  @media screen and (max-width:1550px){
+  @media screen and (max-width: 1550px) {
     gap: 15px;
   }
 }
@@ -56,14 +59,14 @@
   padding-left: 5px;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #037778;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-radius: 15px;
 
-  @media screen and (max-width:1550px){
-  font-size: 30px;
+  @media screen and (max-width: 1550px) {
+    font-size: 30px;
   }
 }
-.routes-link:hover{
+.routes-link:hover {
   box-shadow: inset 250px 0 0 0 #037778;
   color: white;
   border-radius: 15px;
@@ -96,8 +99,6 @@
     padding-left: 220px;
     padding-top: 50px;
   }
-
- 
 
   .routes li {
     font-size: 24px;
