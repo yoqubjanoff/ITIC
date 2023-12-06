@@ -1,0 +1,132 @@
+.burgerMenu {
+  height: 20px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.burgerBar {
+  background-color: #fff;
+  width: 100%;
+  height: 2px;
+}
+.burgerBlack {
+  background-color: #000;
+  width: 100%;
+  height: 2px;
+}
+
+.menu {
+  width: 845px;
+  height: 100vh;
+  background-color: rgba(5, 28, 44, 0.6);
+  backdrop-filter: blur(150px) brightness(100%);
+  -webkit-backdrop-filter: blur(150px) brightness(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 36px;
+  @media screen and (max-width:1550px){
+    gap: 15px;
+  }
+}
+
+.routes-link {
+  display: inline-block;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Onest-Regular", Helvetica;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  padding-left: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #037778;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  border-radius: 15px;
+
+  @media screen and (max-width:1550px){
+  font-size: 30px;
+  }
+}
+.routes-link:hover{
+  box-shadow: inset 250px 0 0 0 #037778;
+  color: white;
+  border-radius: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+@media screen and (max-width: 840px) {
+  .visible {
+    display: block;
+    position: absolute;
+    top: 240px;
+    left: -655px;
+    padding-top: 70px;
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 653px) {
+  .visible {
+    top: 246px;
+    left: -518px;
+    padding-left: 220px;
+    padding-top: 50px;
+  }
+
+ 
+
+  .routes li {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 553px) {
+  .visible {
+    left: -479px;
+  }
+}
+
+/*animations*/
+/*clicked*/
+.burgerBar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(-0.3em, 1.25em);
+  transition: ease-out 0.4s;
+}
+
+.burgerBar.clicked:nth-child(2) {
+  transform: scale(0.005);
+  transition: ease-out 0.4s;
+}
+.burgerBar.clicked:nth-child(3) {
+  transform: rotate(135deg) translate(0.6em, 1em);
+  transition: ease-out 0.4s;
+}
+
+/*unclicked*/
+.burgerBar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}

@@ -1,0 +1,98 @@
+.swal2-popup {
+	width: 685px !important;
+	border-radius: 30px !important;
+	background: #fff !important;
+	box-shadow: 9px 17px 124px 0px rgba(44, 50, 63, 0.15) !important;
+}
+
+.swal2-confirm {
+	border-radius: 1000px !important;
+	background: #fff !important;
+	box-shadow: 0px 13px 50px 0px rgba(28, 41, 60, 0.12) !important;
+	color: #37a67e !important;
+	padding: 16px 32px !important;
+	font-size: 16px !important;
+	font-style: normal !important;
+	font-weight: 500 !important;
+	line-height: 122.523% !important;
+}
+.swal2-cancel {
+	border-radius: 1000px !important;
+	background: #fff !important;
+	box-shadow: 0px 13px 50px 0px rgba(28, 41, 60, 0.12) !important;
+	color: #0d3b3f !important;
+	padding: 16px 32px !important;
+	font-size: 16px !important;
+	font-style: normal !important;
+	font-weight: 500 !important;
+	line-height: 122.523% !important;
+}
+.custom-input-class {
+	width: 90%;
+	border-radius: 12px;
+	border: 1px solid #e1e1e1;
+}
+.custom-input-class:focus {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}
+.custom-input-class:active {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}
+.wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.swal2-textarea {
+	width: 615px;
+	max-width: 615px;
+	height: 90px;
+	border-radius: 12px;
+	border: 1px solid #e1e1e1;
+	background: #fff;
+	outline: none;
+	padding: 16px;
+	box-shadow: none;
+}
+
+.swal2-textarea:active {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}
+.swal2-textarea:focus {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}
+
+.custom-input {
+	width: 565px;
+	height: 60px;
+	border-radius: 12px;
+	border: 1px solid #e1e1e1;
+	background: #fff;
+	outline: none;
+	padding: 16px;
+}
+.swal2-input {
+	border: 1px solid #e1e1e1;
+	box-shadow: none;
+	background-color: #fff;
+	border-radius: 12px;
+	/* Add any other styles you want here */
+}
+.swal2-input:active {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}
+.swal2-input:focus {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid #e1e1e1;
+}

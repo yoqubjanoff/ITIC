@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Onest";
+  src: url(./assets/fonts/OnestBold1602-hint.ttf) format("ttf"),
+    url(./assets/fonts/OnestMedium1602-hint.ttf) format("ttf"),
+    url(./assets/fonts/OnestRegular1602-hint.ttf) format("ttf");
+}
+
+* {
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Onest", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  gap: none;
+}
+body {
+  background-color: #051c2c;
+}
+
+.logo {
+  width: 112px;
+  position: fixed;
+  left: 50px;
+  top: 46px;
+  z-index: 9;
+  cursor: pointer;
+
+  @media screen and (max-width: 840px) {
+    left: 20px;
+  }
+
+  @media screen and (max-width: 653px) {
+    width: 73px;
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 50px;
+  bottom: 46px;
+  z-index: 10;
+  height: 0;
+  width: 0;
+}
+
+.sidebarButton {
+  position: fixed;
+  z-index: 19;
+}
+
+.scrollSectionOuter {
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollSectionInner {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+@media screen and (max-width: 840px) {
+  .scrollSectionInner {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer {
+    top: 60px;
+    left: 200px;
+  }
+
+  .sideBtn {
+    top: -240px;
+    left: 655px;
+  }
+}
+
+@media screen and (max-width: 653px) {
+  .footer {
+    top: 57px;
+    left: 179px;
+  }
+  .sideBtn {
+    top: -246px;
+    left: 324px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .footer {
+    left: 126px;
+  }
+  .sideBtn {
+    left: 267px;
+  }
+}
