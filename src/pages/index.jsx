@@ -65,18 +65,14 @@ function Pages() {
       }
     };
 
-    // ScrollTriggerni yangilash funksiyasini chaqirish
     updateScrollTrigger();
 
-    // Ekran o'lchami o'zgarganda ishlaydigan qism
     const handleResize = () => {
       setResize(window.innerWidth);
     };
 
-    // Ekran o'lchamini o'zgarganda `handleResize` ni chaqirish
     window.addEventListener("resize", handleResize);
 
-    // Effect tugaganda event listener-ni o'chirish
     return () => {
       window.removeEventListener("resize", handleResize);
     };

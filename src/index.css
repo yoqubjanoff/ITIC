@@ -35,6 +35,9 @@ body {
   @media screen and (max-width: 653px) {
     width: 73px;
   }
+  @media screen and (max-width: 417px) {
+  left: 30px;
+  }
 }
 
 .footer {
