@@ -10,7 +10,7 @@ export const Container = styled.div`
     justify-content: center;
     width: 291px;
   }
-  @media screen and (max-width: 370px) {
+  @media screen and (max-width: 360px) {
     justify-content: center;
     width: 210px;
   }
