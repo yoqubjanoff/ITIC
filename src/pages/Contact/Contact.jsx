@@ -44,7 +44,7 @@ function Contact() {
 
       <Container.FooterWrapper>
         <p>©2023 all rights reserved</p>
-        <p>Developed by: OOO IT Investment center</p>
+        <p>Developed by:  IT Investment center</p>
       </Container.FooterWrapper>
       {/* <Container.Bubble>
         <img className="bubble" src={bubble} alt="bubble"/>
