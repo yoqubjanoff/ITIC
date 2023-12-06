@@ -36,7 +36,7 @@ body {
     width: 73px;
   }
   @media screen and (max-width: 416px) {
-    display: none;
+  left: 30px;
   }
 }
 
