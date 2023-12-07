@@ -9,7 +9,7 @@ import Partners from "../pages/Partners/Partners";
 import Testimonials from "../pages/Testimonials/Testimonials";
 import Careers from "../pages/Careers/Careers";
 import Contact from "../pages/Contact/Contact";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import logo from "../assets/images/itLogo.svg";
@@ -18,7 +18,6 @@ import SidebarButton from "../components/SidebarButton/sidebarButton";
 import { Link } from "react-router-dom";
 
 function Pages() {
-  const [resize, setResize] = useState(0);
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -28,57 +27,49 @@ function Pages() {
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
 
-    const updateScrollTrigger = () => {
-      if (triggerElement?.offsetWidth >= 840) {
-        let scrollWidth = null;
-        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
-        if (window.innerWidth < 1600) {
-          scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.68;
-        }
-        const duration = scrollWidth / 1000;
-        const pinX = gsap.fromTo(
-          sectionElement,
-          {
-            x: 0,
-          },
-          {
-            x: -scrollWidth,
-            ease: "none",
-            duration: duration,
-            scrollTrigger: {
-              trigger: triggerElement,
-              start: "top top",
-              end: "bottom -2999%",
-              scrub: 1,
-              pin: true,
-            },
-          }
-        );
-        return () => {
-          pinX.kill();
-          window.location.reload();
-        };
+    if (triggerElement?.offsetWidth >= 840) {
+      let scrollWidth = null;
+      scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
+      if (window.innerWidth < 1600) {
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.44;
+        console.log("1936 ekran uchun");
+      } else if (window.innerWidth < 2620) {
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.55;
+        console.log("2620 ekran uchun");
       } else {
-        ScrollTrigger.getAll().forEach((trigger) => {
-          trigger.kill();
-        });
-      }
-    };
-
-    updateScrollTrigger();
-
-    const handleResize = () => {
-      setResize(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [resize]);
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
+        console.log("boshqa  ekran uchun");
+      } 
   
-
+      const duration = scrollWidth / 1000;
+      const pinX = gsap.fromTo(
+        sectionElement,
+        {
+          x: 0,
+        },
+        {
+          x: -scrollWidth,
+          ease: "none",
+          duration: duration,
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: "top top",
+            end: "bottom -2999%",
+            scrub: 1,
+            pin: true,
+          },
+        }
+      );
+      return () => {
+        pinX.kill();
+        window.location.reload();
+      };
+    } else {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill();
+      });
+    }
+  }, [triggerRef.current?.offsetWidth >= 840]);
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
