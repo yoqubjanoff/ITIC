@@ -23,25 +23,33 @@ function Pages() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
+  
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
-
-    if (triggerElement?.offsetWidth >= 840) {
-      let scrollWidth = null;
-      scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
-      if (window.innerWidth < 1600) {
-        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.44;
-        console.log("1936 ekran uchun");
-      } else if (window.innerWidth < 2620) {
-        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.55;
-        console.log("2620 ekran uchun");
-      } else {
-        scrollWidth = sectionElement.offsetWidth - window.innerWidth * 0.54;
-        console.log("boshqa  ekran uchun");
-      } 
   
+    const calculateScrollWidth = () => {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      let scrollWidth;
+  
+      if (vw < 1536) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.59;
+      } else if (vw < 1750) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
+      } else if (vw < 1920) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.53;
+      } else if (vw < 2620) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.55;
+      } else {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
+      }
+  
+      return scrollWidth;
+    };
+  
+    const updateScrollTrigger = () => {
+      const scrollWidth = calculateScrollWidth();
       const duration = scrollWidth / 1000;
+  
       const pinX = gsap.fromTo(
         sectionElement,
         {
@@ -60,16 +68,23 @@ function Pages() {
           },
         }
       );
+  
       return () => {
         pinX.kill();
         window.location.reload();
       };
+    };
+  
+    if (triggerElement?.offsetWidth >= 840) {
+      // ScrollTriggerni yangilash funksiyasini chaqirish
+      updateScrollTrigger();
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth >= 840]);
+  }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
+  
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);

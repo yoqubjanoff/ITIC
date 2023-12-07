@@ -12,6 +12,9 @@ export const Container = styled.div`
   background: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (max-width: 1250px) {
+    width: 107vw;
+    }
   @media screen and (max-width: 1050px) {
     padding: 100px 0px 32px 60px;
     }
