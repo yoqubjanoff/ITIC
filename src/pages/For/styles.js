@@ -123,16 +123,19 @@ Container.Box = styled.div`
     .forImgGlobe {
       max-width: 263px;
       height: 251px;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     }
 
     .buildingImg {
       width: 160px;
       height: 181px;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     }
 
     .personImg {
       width: 196;
       height: 155;
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     }
   }
 

@@ -140,6 +140,7 @@ Container.Num = styled.p`
 Container.Data = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 715px;
   gap: 36px;
 `;
 export const HeadingAbout = styled.h1`

@@ -85,6 +85,7 @@ function Pages() {
     }
   }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
   
+  
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);

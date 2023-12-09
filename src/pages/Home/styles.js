@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  width: 100vw;
+  width: 102vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,7 +155,7 @@ Container.TeamBox = styled.div`
 Container.MidWrap = styled.div`
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100%;
 
   .chart {

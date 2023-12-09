@@ -4,64 +4,77 @@ import globe from "../../assets/images/globe.png";
 import building from "../../assets/images/building.svg";
 import freelancer from "../../assets/images/freelancer.svg";
 import gsap from "gsap";
-
-// ScrollTriggerni ham yuklab olish
 import ScrollTrigger from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const For = () => {
-  const myImgRef = useRef();
+  const forSectionRef = useRef([]);
+  const globalImgRef = useRef(null);
+  const buildImgRef = useRef(null);
+  const peopleImgRef = useRef(null);
 
   useEffect(() => {
+    const forSection = forSectionRef.current;
+    const globalImg = globalImgRef.current;
+    const buildImg = buildImgRef.current;
+    const peopleImg = peopleImgRef.current;
+
+    gsap.set([globalImg, buildImg, peopleImg], { opacity: 0 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: myImgRef.current,
+        trigger: forSection,
         start: "top center",
         end: "bottom center",
-        scrub: 1,
-        toggleAction: "restart none none none", // restart, yuqori tomoni, past tomoni, yonida
+        toggleActions: "restart none none none",
       },
     });
 
-    // Qo'shilgan qismi animatsiyasini boshlash
     tl.fromTo(
-      ".forImgGlobe",
-      { y: 350, width: 0, opacity: 0 },
-      { y: 30, width: "281px", opacity: 1, ease: "power2.out", duration: 1 }
-    );
+      globalImg,
+      { y: 350, width: 0 },
+      { y: 30, width: "381px", opacity: 1, ease: "power2.out", duration: 1.5}
+    )
+      .fromTo(
+        buildImg,
+        { y: 350, width: 0 },
+        { y: 0, width: "381px", opacity: 1, ease: "power2.out", duration: 1.5 },
+        "<"
+      )
+      .fromTo(
+        peopleImg,
+        { y: 350, width: 0 },
+        { y: 0, width: "381px", opacity: 1, ease: "power2.out", duration: 1.5 },
+        "<"
+      );
 
-    tl.fromTo(
-      ".buildingImg",
-      { y: 350, width: 0, opacity: 0 },
-      {
-        y: 0,
-        width: "281px",
-        opacity: 1,
-        ease: "power2.out",
-        duration: 1,
-      },
-      "<"
-    );
+    const scrollTrigger = ScrollTrigger.getById(forSection.id);
+    if (scrollTrigger) {
+      scrollTrigger.kill();
+    }
 
-    tl.fromTo(
-      ".personImg",
-      { y: 350, width: 0, opacity: 0 },
-      {
-        y: 0,
-        width: "281px",
-        opacity: 1,
-        ease: "power2.out",
-        duration: 1,
+    ScrollTrigger.create({
+      id: forSection.id,
+      trigger: forSection,
+      start: "top top",
+      end: "bottom center",
+      toggleActions: "play none none reverse",
+      onEnter: () => {
+        tl.restart();
       },
-      "<"
-    );
-    return () => tl.kill();
+    });
+
+    return () => {
+      tl.kill();
+      ScrollTrigger.getById(forSection.id).kill();
+    };
   }, []);
 
   return (
-    <Container id="services" ref={myImgRef}>
+    <Container id="services" ref={forSectionRef}>
       <Container.Wrapper>
-        <Container.Box >
+        <Container.Box>
           <Container.Text>
             <Container.Number>01</Container.Number>
             <HeadingOneFor>Global Customers</HeadingOneFor>
@@ -71,10 +84,15 @@ const For = () => {
               competitive price of the final product
             </Paragraph>
           </Container.Text>
-          <img className="forImgGlobe" src={globe} alt="for" />
+          <img
+            className="forImgGlobe"
+            ref={globalImgRef}
+            src={globe}
+            alt="for"
+          />
         </Container.Box>
 
-        <Container.Box >
+        <Container.Box>
           <Container.Text>
             <Container.Number>02</Container.Number>
             <HeadingOneFor>IT Companies</HeadingOneFor>
@@ -83,10 +101,15 @@ const For = () => {
               with our assistance and generate revenue
             </Paragraph>
           </Container.Text>
-          <img className="buildingImg" src={building} alt="for" />
+          <img
+            className="buildingImg"
+            ref={buildImgRef}
+            src={building}
+            alt="for"
+          />
         </Container.Box>
 
-        <Container.Box >
+        <Container.Box>
           <Container.Text>
             <Container.Number>03</Container.Number>
             <HeadingOneFor>Freelancers</HeadingOneFor>
@@ -95,7 +118,12 @@ const For = () => {
               projects
             </Paragraph>
           </Container.Text>
-          <img className="personImg" src={freelancer} alt="for" />
+          <img
+            className="personImg"
+            ref={peopleImgRef}
+            src={freelancer}
+            alt="for"
+          />
         </Container.Box>
       </Container.Wrapper>
     </Container>
