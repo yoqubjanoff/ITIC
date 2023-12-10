@@ -13,6 +13,16 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
 
+  @media screen and (max-width: 1550px) {
+    width: 103vw;
+  }
+  @media screen and (max-width: 1443px) {
+    width: 104vw;
+  }
+  @media screen and (max-width: 1250px) {
+    width: 105vw;
+  }
+
   @media screen and (max-width: 840px) {
     height: auto;
     padding: 0 0 60px 15px;
@@ -165,7 +175,7 @@ Container.MidWrap = styled.div`
     width: 620px;
     display: flex;
     align-items: center;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1220px) {
       width: 520px;
       right: -25px;
     }
@@ -334,6 +344,5 @@ Container.MobileBlur = styled.div`
   top: 921px;
   z-index: 200;
   @media screen and (max-width: 640px) {
-  
   }
 `;

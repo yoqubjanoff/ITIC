@@ -23,38 +23,33 @@ function Pages() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
+  
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
-
+  
     const calculateScrollWidth = () => {
-      const vw = Math.max(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
-      );
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       let scrollWidth;
-      if (vw <= 1220) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.08;
-        console.log('shu ascbnnqsb');
-      } else if (vw <= 1536) {
+  
+      if (vw < 1536) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.59;
-      } else if (vw <= 1750) {
+      } else if (vw < 1750) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      } else if (vw <= 1920) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.41;
-      } else if (vw <= 2620) {
+      } else if (vw < 1920) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.53;
+      } else if (vw < 2620) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.55;
       } else {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
       }
-
+  
       return scrollWidth;
     };
-
+  
     const updateScrollTrigger = () => {
       const scrollWidth = calculateScrollWidth();
       const duration = scrollWidth / 1000;
-
+  
       const pinX = gsap.fromTo(
         sectionElement,
         {
@@ -73,13 +68,13 @@ function Pages() {
           },
         }
       );
-
+  
       return () => {
         pinX.kill();
         window.location.reload();
       };
     };
-
+  
     if (triggerElement?.offsetWidth >= 840) {
       updateScrollTrigger();
     } else {
