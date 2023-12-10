@@ -30,14 +30,15 @@ function Pages() {
     const calculateScrollWidth = () => {
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       let scrollWidth;
-  
-      if (vw < 1536) {
+      
+      if (vw <= 1536) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.59;
-      } else if (vw < 1750) {
+        console.log( sectionElement.offsetWidth - vw * 0.59);
+      } else if (vw <= 1750) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      } else if (vw < 1920) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.53;
-      } else if (vw < 2620) {
+      } else if (vw <= 1920) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.41;
+      } else if (vw <= 2620) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.55;
       } else {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
@@ -100,7 +101,7 @@ function Pages() {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} ref={triggerRef}  className="scrollSectionOuter">
       <Link to="/">
         <img className="logo" src={logo} alt="company logo" />
       </Link>
@@ -110,8 +111,6 @@ function Pages() {
       <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
         <SidebarButton scrollToElement={scrollToElement} />
       </div>
-      <div className="scrollSectionOuter">
-        <div ref={triggerRef}>
           <div ref={sectionRef} className="scrollSectionInner">
             <Home />
             <For />
@@ -124,8 +123,6 @@ function Pages() {
             <Testimonials />
             <Careers />
             <Contact />
-          </div>
-        </div>
       </div>
     </div>
   );
