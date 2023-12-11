@@ -41,7 +41,7 @@ function Cases() {
           </Link>
         </div>
         <Container.CasesWrapper>
-          {cases.slice(0, 3)?.map((items, index) => (
+          {cases.slice(0, 10)?.map((items, index) => (
             <CaseComp
               key={index}
               tag={items?.tagsList}

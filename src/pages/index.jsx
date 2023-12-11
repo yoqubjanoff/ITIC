@@ -26,39 +26,18 @@ function Pages() {
   
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
-  
-    const calculateScrollWidth = () => {
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      let scrollWidth;
-  
-      if (vw < 1536) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.59;
-      } else if (vw < 1750) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      } else if (vw < 1920) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.53;
-      } else if (vw < 2620) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.55;
-      } else {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      }
-  
-      return scrollWidth;
-    };
-  
+
     const updateScrollTrigger = () => {
-      const scrollWidth = calculateScrollWidth();
-      const duration = scrollWidth / 1000;
-  
+  console.log(sectionElement.offsetWidth - window.innerWidth);
       const pinX = gsap.fromTo(
         sectionElement,
         {
           x: 0,
         },
         {
-          x: -scrollWidth,
+          x:-(sectionElement.offsetWidth -  window.innerWidth  + 1122 ) ,
           ease: "none",
-          duration: duration,
+          duration: 1,
           scrollTrigger: {
             trigger: triggerElement,
             start: "top top",
@@ -88,13 +67,13 @@ function Pages() {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
-
       window.scrollTo({
         top: element.x + window.pageYOffset,
         behavior: "smooth",
       });
     }
   };
+
 
   return (
     <div
