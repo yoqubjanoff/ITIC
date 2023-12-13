@@ -81,7 +81,6 @@ function Pages() {
     };
 
     if (triggerElement?.offsetWidth >= 840) {
-      // ScrollTriggerni yangilash funksiyasini chaqirish
       updateScrollTrigger();
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
@@ -90,13 +89,15 @@ function Pages() {
     }
   }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
 
+
+
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
 
       window.scrollTo({
-        top: element.x + window.pageYOffset,
+        top: element.x + window.pageXOffset,
         behavior: "smooth",
       });
     }
