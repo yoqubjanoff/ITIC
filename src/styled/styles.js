@@ -147,3 +147,5 @@ export const ScrollAnimationTwo = styled.div`
     flex-direction: row;
   }
 `;
+
+

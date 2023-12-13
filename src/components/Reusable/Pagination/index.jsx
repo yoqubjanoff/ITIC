@@ -102,7 +102,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 						.fill(0)
 						.map((v, i) => {
 							return (
-								<>
+								<div>
 									<Container.Item
 										active={current2 === i}
 										onClick={() => {
@@ -114,7 +114,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 									>
 										{i + 1}
 									</Container.Item>
-								</>
+								</div>
 							);
 						})
 				) : //  2 - condition
@@ -125,7 +125,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 							.fill(0)
 							.map((v, i) => {
 								return (
-									<>
+									<div>
 										<Container.Item
 											active={current2 === i}
 											onClick={() => {
@@ -137,7 +137,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 										>
 											{i + 1}
 										</Container.Item>
-									</>
+									</div>
 								);
 							})}
 						{Last}
@@ -153,7 +153,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 							.map((v, i) => {
 								return (
 									i > SizeAll - 8 && (
-										<>
+										<div>
 											<Container.Item
 												active={current2 === i}
 												onClick={() => {
@@ -165,7 +165,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 											>
 												{i + 1}
 											</Container.Item>
-										</>
+										</div>
 									)
 								);
 							})}
@@ -179,7 +179,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 								return (
 									i > current2 - 3 &&
 									i < current2 + 3 && (
-										<>
+										<div>
 											<Container.Item
 												active={current2 === i}
 												onClick={() => {
@@ -191,7 +191,7 @@ const Pagination = ({ margin, current, SizeAll }) => {
 											>
 												{i + 1}
 											</Container.Item>
-										</>
+										</div>
 									)
 								);
 							})}

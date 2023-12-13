@@ -9,7 +9,6 @@ import { Container } from "../../pages/Careers/styles";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import gsap from "gsap";
 
 function Job() {
   const [selectedJobTitle, setSelectedJobTitle] = useState("");
@@ -37,30 +36,13 @@ function Job() {
 
   useEffect(() => setUrl(window.location.pathname), [window.location.pathname]);
 
-  useEffect(() => { 
-    ref.current.forEach((el) => { 
-        gsap.fromTo(el, { autoAlpha: 0 }, { 
-            autoAlpha: 1, left: 0, 
-            duration: 0.5, scrollTrigger: { 
-                trigger: el, 
-                start: "top bottom", 
-                toggleActions: "play none none reverse"
-            } 
-        }) 
-    }) 
-}, []) 
-const addtoRefs = (el) => { 
-  if (el && !ref.current.includes(el)) { 
-      ref.current.push(el); 
-  } 
-}
 
   return (
-    <>
+    <div>
       <div className="container">
         {testomonial.slice(0, 4)?.map((items, index) => {
           return (
-            <div key={index} className="jobBox" ref={addtoRefs}>
+            <div key={index} className="jobBox" >
               <div className="upperPart">
                 <div className="jobTitle">
                   <h3>{items?.title}</h3>
@@ -109,7 +91,7 @@ const addtoRefs = (el) => {
           selectedJobTitle={selectedJobTitle}
         />
       </div>
-    </>
+    </div>
   );
 }
 

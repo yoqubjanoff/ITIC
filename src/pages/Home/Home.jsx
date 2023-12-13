@@ -71,7 +71,7 @@ function Home() {
               competitive
             </Paragraph>
             <Container.TeamBox className="image-class">
-              <>
+              <div>
                 {callData?.slice(0, 5).map((items, index) => {
                   const topPosition = index * 0;
                   const leftPosition = index * 50;
@@ -99,7 +99,7 @@ function Home() {
                 <div className="lastrounded">
                   <span>{callData.length}+</span>
                 </div>
-              </>
+              </div>
             </Container.TeamBox>
             <Container.MobileImg src={mobileImg}/>
           </Container.Wrapper>

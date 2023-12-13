@@ -28,20 +28,19 @@ function Pages() {
     const sectionElement = sectionRef.current;
 
     const updateScrollTrigger = () => {
-  console.log(sectionElement.offsetWidth - window.innerWidth);
       const pinX = gsap.fromTo(
         sectionElement,
         {
           x: 0,
         },
         {
-          x:-(sectionElement.offsetWidth -  window.innerWidth  + 1122 ) ,
+          x: -(sectionElement.offsetWidth -  window.innerWidth  + 850 ) ,
           ease: "none",
           duration: 1,
           scrollTrigger: {
             trigger: triggerElement,
             start: "top top",
-            end: "bottom -2999%",
+            end: "top -2999%",
             scrub: 1,
             pin: true,
           },
@@ -76,34 +75,34 @@ function Pages() {
 
 
   return (
-    <div
-      style={{ position: "relative" }}
-      ref={triggerRef}
-      className="scrollSectionOuter"
-    >
-      <Link to="/">
-        <img className="logo" src={logo} alt="company logo" />
-      </Link>
-      <div className="footer">
-        <Footer />
-      </div>
-      <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
-        <SidebarButton scrollToElement={scrollToElement} />
-      </div>
-      <div ref={sectionRef} className="scrollSectionInner">
-        <Home />
-        <For />
-        <About />
-        <Directions />
-        <Cases />
-        <Employees />
-        <Branches />
-        <Partners />
-        <Testimonials />
-        <Careers />
-        <Contact />
+    <div style={{ position: "relative" }}>
+    <Link to="/">
+      <img className="logo" src={logo} alt="company logo" />
+    </Link>
+    <div className="footer">
+      <Footer />
+    </div>
+    <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
+      <SidebarButton scrollToElement={scrollToElement} />
+    </div>
+    <div className="scrollSectionOuter">
+      <div ref={triggerRef}>
+        <div ref={sectionRef} className="scrollSectionInner">
+          <Home />
+          <For />
+          <About />
+          <Directions />
+          <Cases />
+          <Employees />
+          <Branches />
+          <Partners />
+          <Testimonials />
+          <Careers />
+          <Contact />
+        </div>
       </div>
     </div>
+  </div>
   );
 }
 
