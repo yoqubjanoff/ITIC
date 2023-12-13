@@ -64,9 +64,9 @@ function SidebarButton({ scrollToElement }) {
             >
               <a
                 className="routes-link"
-                // href={`#${page.id}`}
+                href={`#${page.id}`}
                 key={page.id}
-                data-target={`${page?.id}`}
+                // data-target={`${page?.id}`}
               >
                 {page.path}
               </a>

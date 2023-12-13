@@ -1,3 +1,5 @@
+import React from "react";
+import HorizontalScroll from "react-scroll-horizontal";
 import Home from "./Home/Home";
 import For from "./For/For";
 import About from "./About/About";
@@ -9,59 +11,12 @@ import Partners from "../pages/Partners/Partners";
 import Testimonials from "../pages/Testimonials/Testimonials";
 import Careers from "../pages/Careers/Careers";
 import Contact from "../pages/Contact/Contact";
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/itLogo.svg";
 import Footer from "../components/Footer/Footer";
 import SidebarButton from "../components/SidebarButton/sidebarButton";
-import { Link } from "react-router-dom";
 
 function Pages() {
-  const sectionRef = useRef(null);
-  const triggerRef = useRef(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    const triggerElement = triggerRef.current;
-    const sectionElement = sectionRef.current;
-
-    const updateScrollTrigger = () => {
-      const pinX = gsap.fromTo(
-        sectionElement,
-        {
-          x: 0,
-        },
-        {
-          x: -(sectionElement.offsetWidth -  window.innerWidth  + 850 ) ,
-          ease: "none",
-          duration: 1,
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "top top",
-            end: "top -2999%",
-            scrub: 1,
-            pin: true,
-          },
-        }
-      );
-  
-      return () => {
-        pinX.kill();
-        window.location.reload();
-      };
-    };
-  
-    if (triggerElement?.offsetWidth >= 840) {
-      updateScrollTrigger();
-    } else {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        trigger.kill();
-      });
-    }
-  }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
-
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
@@ -73,21 +28,19 @@ function Pages() {
     }
   };
 
-
   return (
     <div style={{ position: "relative" }}>
-    <Link to="/">
-      <img className="logo" src={logo} alt="company logo" />
-    </Link>
-    <div className="footer">
-      <Footer />
-    </div>
-    <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
-      <SidebarButton scrollToElement={scrollToElement} />
-    </div>
-    <div className="scrollSectionOuter">
-      <div ref={triggerRef}>
-        <div ref={sectionRef} className="scrollSectionInner">
+      <Link to="/">
+        <img className="logo" src={logo} alt="company logo" />
+      </Link>
+      <div className="footer">
+        <Footer />
+      </div>
+      <div className="sideBtn" style={{ position: "fixed", zIndex: "19" }}>
+        <SidebarButton scrollToElement={scrollToElement} />
+      </div>
+      <HorizontalScroll style={{ width: "100%", height: "100vh" }}>
+        <div className="scrollSectionInner">
           <Home />
           <For />
           <About />
@@ -100,9 +53,8 @@ function Pages() {
           <Careers />
           <Contact />
         </div>
-      </div>
+      </HorizontalScroll>
     </div>
-  </div>
   );
 }
 

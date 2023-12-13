@@ -18,6 +18,7 @@
 }
 body {
   background-color: #051c2c;
+  transition: all 0.5s ease-in-out;
 }
 
 .logo {
