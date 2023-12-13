@@ -23,14 +23,17 @@ function Pages() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
+
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
-  
+
     const calculateScrollWidth = () => {
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      const vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
       let scrollWidth;
-  
+
       if (vw < 1536) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.59;
       } else if (vw < 1750) {
@@ -42,14 +45,14 @@ function Pages() {
       } else {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
       }
-  
+
       return scrollWidth;
     };
-  
+
     const updateScrollTrigger = () => {
       const scrollWidth = calculateScrollWidth();
       const duration = scrollWidth / 1000;
-  
+
       const pinX = gsap.fromTo(
         sectionElement,
         {
@@ -61,20 +64,20 @@ function Pages() {
           duration: duration,
           scrollTrigger: {
             trigger: triggerElement,
-            start: "top top",
+            start: "50% 50%",
             end: "bottom -2999%",
             scrub: 1,
             pin: true,
           },
         }
       );
-  
+
       return () => {
         pinX.kill();
         window.location.reload();
       };
     };
-  
+
     if (triggerElement?.offsetWidth >= 840) {
       // ScrollTriggerni yangilash funksiyasini chaqirish
       updateScrollTrigger();
@@ -84,8 +87,6 @@ function Pages() {
       });
     }
   }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
-  
-  
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
