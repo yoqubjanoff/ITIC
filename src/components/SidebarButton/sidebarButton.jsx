@@ -5,13 +5,13 @@ import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 const pages = [
   { id: "home", path: "Home" },
-  { id: "about", path: "About" },
   { id: "services", path: "Services" },
-  { id: "case-studies", path: "Case studies" },
-  { id: "our-time", path: "Our team" },
+  { id: "about", path: "About" },
   { id: "direction", path: "Direction" },
-  { id: "our-partners", path: "Our partners" },
+  { id: "case-studies", path: "Case studies" },
+  { id: "our-teame", path: "Our team" },
   { id: "branches", path: "Branches" },
+  { id: "our-partners", path: "Our partners" },
   { id: "testomonials", path: "Testomonials" },
   { id: "careers", path: "Careers" },
   { id: "contact-us", path: "Contact Us" },

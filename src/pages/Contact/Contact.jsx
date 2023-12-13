@@ -46,10 +46,9 @@ function Contact() {
         <p>©2023 all rights reserved</p>
         <p>Developed by:  IT Investment center</p>
       </Container.FooterWrapper>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem consequuntur vel quae molestias recusandae distinctio eos. Velit exercitationem magnam dolorum debitis illo? Reiciendis enim exercitationem voluptatum iure eum modi impedit aspernatur inventore magnam, itaque voluptatem saepe temporibus, illo vero a laborum aliquam. Voluptate ab, accusantium minus atque libero ullam nesciunt in. Eos quam eum culpa laboriosam nostrum ea beatae incidunt delectus, perspiciatis ex nulla ducimus nam a error nobis quisquam architecto, sit ratione harum. Tempore eius enim rerum aspernatur earum consequuntur, est nisi odit, repellendus repudiandae error iure, quibusdam necessitatibus omnis ab aliquid modi officiis perferendis impedit fugit commodi illo!
-      {/* <Container.Bubble>
+      <Container.Bubble>
         <img className="bubble" src={bubble} alt="bubble"/>
-      </Container.Bubble> */}
+      </Container.Bubble>
       <FormModal isVisible={showModal} onClose={() => setShowModal(false)} />
     </Container>
   );
