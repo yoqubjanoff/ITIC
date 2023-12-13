@@ -33,18 +33,20 @@ function Pages() {
         window.innerWidth || 0
       );
       let scrollWidth;
-
-      if (vw < 1536) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.59;
-      } else if (vw < 1750) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      } else if (vw < 1920) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.53;
-      } else if (vw < 2620) {
+      if (vw <= 1220) {
+        console.log("2620");
+        scrollWidth = sectionElement.offsetWidth - vw * 0.60;
+      } else if (vw <= 1536) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.69;
+      } else if (vw <= 1600) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.46;
+      } else if (vw <= 1920) {
         scrollWidth = sectionElement.offsetWidth - vw * 0.55;
+      } else if (vw <= 2620) {
+        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
       } else {
         scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      }
+      }      
 
       return scrollWidth;
     };
@@ -64,8 +66,8 @@ function Pages() {
           duration: duration,
           scrollTrigger: {
             trigger: triggerElement,
-            start: "50% 50%",
-            end: "bottom -2999%",
+            start: "top top",
+            end: "bottom -4999%",
             scrub: 1,
             pin: true,
           },
