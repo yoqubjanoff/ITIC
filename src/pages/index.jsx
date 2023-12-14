@@ -35,12 +35,13 @@ function Pages() {
       } else if (vw <= 1440) {
         scrollWidth = sectionElement.offsetWidth - window.innerWidth + 546;
       } else if (vw <= 1536) {
-        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 918;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 545;
       } else if (vw <= 1600) {
         scrollWidth = sectionElement.offsetWidth - window.innerWidth + 920;
       } else if (vw <= 1920) {
         scrollWidth = sectionElement.offsetWidth - window.innerWidth + 910;
       } else if (vw <= 2350) {
+        console.log("1536");
         scrollWidth = sectionElement.offsetWidth - window.innerWidth + 892;
       } else if (vw <= 2620) {
         scrollWidth = sectionElement.offsetWidth - window.innerWidth + 882;
