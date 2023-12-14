@@ -9,7 +9,7 @@ const pages = [
   { id: "about", path: "About" },
   { id: "direction", path: "Direction" },
   { id: "case-studies", path: "Case studies" },
-  { id: "our-teame", path: "Our team" },
+  { id: "our-team", path: "Our team" },
   { id: "branches", path: "Branches" },
   { id: "our-partners", path: "Our partners" },
   { id: "testomonials", path: "Testomonials" },
@@ -56,20 +56,20 @@ function SidebarButton({ scrollToElement }) {
         <ul className="routes">
           {pages.map((page, id) => (
             <li
-            key={id}
+              key={id}
               onClick={() => {
                 scrollToElement(page?.id);
                 updateMenu();
               }}
             >
-              <a
+              <Link
                 className="routes-link"
-                href={`#${page.id}`}
+                to={`#${page.id}`}
                 key={page.id}
                 data-target={`${page?.id}`}
               >
                 {page.path}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

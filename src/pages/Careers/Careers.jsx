@@ -39,10 +39,6 @@ function Careers() {
   useEffect(() => {
     getCallReq();
   }, []);
-
-
-
-
   return (
     <Container ref={careerRef} id="careers">
       <Container.Wrapper>

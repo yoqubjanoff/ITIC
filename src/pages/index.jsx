@@ -26,35 +26,30 @@ function Pages() {
 
     const triggerElement = triggerRef.current;
     const sectionElement = sectionRef.current;
+    let scrollWidth = null;
 
-    const calculateScrollWidth = () => {
-      const vw = Math.max(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
-      );
-      let scrollWidth;
+    if (triggerElement?.offsetWidth >= 840) {
+      const vw = window.innerWidth;
       if (vw <= 1220) {
-        console.log("2620");
-        scrollWidth = sectionElement.offsetWidth - vw * 0.60;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 580;
+      } else if (vw <= 1440) {
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 546;
       } else if (vw <= 1536) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.69;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 918;
       } else if (vw <= 1600) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.46;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 920;
       } else if (vw <= 1920) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.55;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 910;
+      } else if (vw <= 2350) {
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 892;
       } else if (vw <= 2620) {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
+        scrollWidth = sectionElement.offsetWidth - window.innerWidth + 882;
       } else {
-        scrollWidth = sectionElement.offsetWidth - vw * 0.68;
-      }      
+        scrollWidth = sectionElement.offsetWidth - 900;
+      }
 
-      return scrollWidth;
-    };
-
-    const updateScrollTrigger = () => {
-      const scrollWidth = calculateScrollWidth();
+      console.log("Scroll Width:", scrollWidth);
       const duration = scrollWidth / 1000;
-
       const pinX = gsap.fromTo(
         sectionElement,
         {
@@ -67,37 +62,29 @@ function Pages() {
           scrollTrigger: {
             trigger: triggerElement,
             start: "top top",
-            end: "bottom -4999%",
+            end: "bottom -2999%",
             scrub: 1,
             pin: true,
           },
         }
       );
-
       return () => {
         pinX.kill();
         window.location.reload();
       };
-    };
-
-    if (triggerElement?.offsetWidth >= 840) {
-      updateScrollTrigger();
     } else {
       ScrollTrigger.getAll().forEach((trigger) => {
         trigger.kill();
       });
     }
-  }, [triggerRef.current?.offsetWidth, sectionRef.current?.offsetWidth]);
-
-
+  }, [triggerRef.current?.offsetWidth >= 840]);
 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
       const element = elementRef.getBoundingClientRect();
-
       window.scrollTo({
-        top: element.x + window.pageXOffset,
+        top: element.x + window.pageYOffset,
         behavior: "smooth",
       });
     }
