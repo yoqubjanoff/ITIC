@@ -16,12 +16,16 @@ export const Container = styled.div`
   @media screen and (max-width: 653px) {
     gap: 16px;
     height: auto;
-    padding: 0 30px 30px 30px;
   }
 
   .imageWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: fit-content;
+    width: 100%;
+
 
     .tagWrap {
       position: absolute;
@@ -48,11 +52,12 @@ export const Container = styled.div`
   }
 
   .caseImage {
-    height: 501px;
-    width: 100%;
-    max-width: 918px;
+    width: 90%;
+    height: 100%;
+    
     border-radius: 50px;
     object-fit: cover;
+
 
     @media screen and (max-width: 840px) {
       height: 401px;
@@ -65,6 +70,7 @@ export const Container = styled.div`
       border-radius: 20px;
     }
   }
+  
 `;
 
 Container.Desc = styled.div`

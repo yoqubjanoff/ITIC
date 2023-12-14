@@ -24,6 +24,7 @@ function Cases() {
   useEffect(() => {
     getCallReq();
   }, []);
+  
 
   return (
     <Container id="case-studies">

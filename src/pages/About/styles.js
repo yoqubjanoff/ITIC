@@ -20,15 +20,15 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 840px) {
-    height: 645px;
+    height: 800px;
     width: 100vw;
     padding: 40px;
   }
 
   @media screen and (max-width: 653px) {
-    height: 610px;
     width: 100vw;
     justify-content: center;
+    padding: 50px 15;
   }
 
   @keyframes moveBackground {
@@ -71,7 +71,7 @@ Container.Wrapper = styled.div`
   @media screen and (max-width: 653px) {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 50px;
     text-align: center;
   }
 `;
@@ -168,7 +168,7 @@ export const HeadingAbout = styled.h1`
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 42px;
+    font-size: 60px;
   }
 
   @media only screen and (max-width: 840px) {
@@ -176,7 +176,7 @@ export const HeadingAbout = styled.h1`
   }
 
   @media only screen and (max-width: 653px) {
-    font-size: 42px;
+    font-size: 50px;
   }
 `;
 Container.HeadingAbout = styled.h1`
@@ -204,17 +204,9 @@ Container.HeadingAbout = styled.h1`
   }
 
   @media screen and (max-width: 1440px) {
-    font-size: 50px;
+    font-size: 60px;
   }
-
-  @media screen and (max-width: 1000px) {
-    font-size: 40px;
-  }
-
-
   @media only screen and (max-width: 653px) {
-    width: 288px;
-    font-size: 32px;
     text-align: center;
   }
 `;

@@ -11,7 +11,7 @@ export const Container = styled.div`
   padding: 0 100px;
   gap: 292px;
   @media screen and (max-width: 653px) {
-      padding: 0 15px;
+      padding: 50px 15px;
     }
 
   .wrapper {
@@ -49,8 +49,9 @@ export const Container = styled.div`
   @media screen and (max-width: 450px) {
     height: 1720px;
   }
-  @media screen and (max-width: 330px) {
-    height: 1400px;
+  
+  @media screen and (max-width: 370px) {
+    height: 1500px;
 
   }
 `;
@@ -107,9 +108,5 @@ export const HeadingDirection = styled.h1`
 
   @media only screen and (max-width: 840px) {
     font-size: 56px;
-  }
-
-  @media only screen and (max-width: 653px) {
-    font-size: 42px;
   }
 `;
