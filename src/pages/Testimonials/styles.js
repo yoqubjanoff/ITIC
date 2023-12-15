@@ -111,7 +111,7 @@ Container.Carousel = styled.div`
   gap: 5.5px;
   @media screen and (max-width: 840px) {
     flex-direction: column;
-    gap: 0;
+    gap: 5px;
   }
 `;
 

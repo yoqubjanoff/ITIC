@@ -1,5 +1,4 @@
-import { Container } from "./styles";
-import { HeadingOne, Paragraph } from "../../styled/styles";
+import { Container, HeadingCase, ParagraphCase } from "./styles";
 import CaseComp from "../../components/PortfolioCase/CaseComp";
 import { Link } from "react-router-dom";
 import Button from "../../components/ButtonCase/Button";
@@ -30,11 +29,11 @@ function Cases() {
     <Container id="case-studies">
       <div className="wrapper">
         <div className="textWrapper">
-          <HeadingOne>Case Studies</HeadingOne>
-          <Paragraph>
+          <HeadingCase>Case Studies</HeadingCase>
+          <ParagraphCase>
             Become a member of a freelancer's poo l and work on creative
             projects
-          </Paragraph>
+          </ParagraphCase>
           <Link to={"/allCases"}>
             <div className="respDesk">
               <Button title="See all" iconSize="30px" btnwidth="159px" />

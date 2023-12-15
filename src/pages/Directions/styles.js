@@ -30,29 +30,29 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 840px) {
-    height: 2200px;
+    height: 2100px;
     width: 100vw;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start ;
     gap: 80px;
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 80px;
-    }
+   
   }
 
   @media screen and (max-width: 653px) {
-    height: 1950px;
+    height: 2100px;
+    align-items: center ;
+
   }
   @media screen and (max-width: 450px) {
-    height: 1720px;
+    height: 1850px;
   }
   
   @media screen and (max-width: 370px) {
-    height: 1500px;
+    height: 1600px;
 
+  }
+  @media screen and (max-width: 320px) {
+    height: 1500px;
   }
 `;
 
@@ -102,11 +102,11 @@ export const HeadingDirection = styled.h1`
     }
   }
 
-  @media only screen and (max-width: 768px) {
-    font-size: 42px;
+  @media only screen and (max-width: 840px) {
+    font-size: 52px;
   }
 
-  @media only screen and (max-width: 840px) {
-    font-size: 56px;
+  @media only screen and (max-width: 768px) {
+    font-size: 42px;
   }
 `;

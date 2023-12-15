@@ -23,7 +23,7 @@ export const Container = styled.div`
   @media only screen and (max-width: 653px) {
     justify-content: center;
     width: 100vw;
-    height: 1765px;
+    height: 1600px;
   }
 `;
 
@@ -100,7 +100,7 @@ Container.Wrapper = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    gap: 190px;
+    gap: 110px;
   }
 `;
 
