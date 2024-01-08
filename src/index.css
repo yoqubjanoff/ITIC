@@ -27,8 +27,10 @@ body {
 }
 
 .logo {
-  width: 112px;
+  width: 322px;
   position: fixed;
+  font-size: 45px;
+  color: #fff;
   left: 50px;
   top: 46px;
   z-index: 9;

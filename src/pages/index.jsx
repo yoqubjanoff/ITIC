@@ -12,7 +12,7 @@ import Contact from "../pages/Contact/Contact";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import logo from "../assets/images/itLogo.svg";
+import logo from "../assets/images/logo.png";
 import Footer from "../components/Footer/Footer";
 import SidebarButton from "../components/SidebarButton/sidebarButton";
 import { Link } from "react-router-dom";
@@ -80,6 +80,7 @@ function Pages() {
     }
   }, [triggerRef.current?.offsetWidth >= 840]);
 
+ 
   const scrollToElement = (id) => {
     const elementRef = document.getElementById(id);
     if (elementRef) {
@@ -93,8 +94,8 @@ function Pages() {
 
   return (
     <div style={{ position: "relative" }}>
-      <Link to="/">
-        <img className="logo" src={logo} alt="company logo" />
+      <Link to="/"  >
+      <h2 className="logo">Your logo</h2>
       </Link>
       <div className="footer">
         <Footer />

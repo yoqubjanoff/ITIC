@@ -30,7 +30,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 840px) {
-    height: 2100px;
+    height: 2000px;
     width: 100vw;
     flex-direction: column;
     align-items: flex-start ;
@@ -39,20 +39,19 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 653px) {
-    height: 2100px;
     align-items: center ;
 
   }
   @media screen and (max-width: 450px) {
-    height: 1850px;
+    height: auto;
   }
   
   @media screen and (max-width: 370px) {
-    height: 1600px;
+    /* height: 1600px; */
 
   }
   @media screen and (max-width: 320px) {
-    height: 1500px;
+    /* height: 1500px; */
   }
 `;
 

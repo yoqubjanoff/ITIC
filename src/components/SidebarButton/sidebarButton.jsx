@@ -62,14 +62,14 @@ function SidebarButton({ scrollToElement }) {
                 updateMenu();
               }}
             >
-              <Link
+              <a
                 className="routes-link"
-                to={`#${page.id}`}
+                href={`#${page.id}`}
                 key={page.id}
                 data-target={`${page?.id}`}
               >
                 {page.path}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
