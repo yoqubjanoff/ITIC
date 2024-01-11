@@ -1,9 +1,4 @@
-/* @font-face {
-  font-family: "Onest";
-  src: url(./assets/fonts/OnestBold1602-hint.ttf) format("ttf"),
-    url(./assets/fonts/OnestMedium1602-hint.ttf) format("ttf"),
-    url(./assets/fonts/OnestRegular1602-hint.ttf) format("ttf");
-} */
+
 @font-face {
   font-family: "Onest";
   src: url(./assets/fonts/OnestBold1602-hint.ttf) format("truetype"),
@@ -27,7 +22,8 @@ body {
 }
 
 .logo {
-  width: 322px;
+  
+  width: 155px;
   position: fixed;
   font-size: 45px;
   color: #fff;

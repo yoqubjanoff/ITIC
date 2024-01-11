@@ -12,7 +12,7 @@ import Contact from "../pages/Contact/Contact";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.svg";
 import Footer from "../components/Footer/Footer";
 import SidebarButton from "../components/SidebarButton/sidebarButton";
 import { Link } from "react-router-dom";
@@ -95,7 +95,8 @@ function Pages() {
   return (
     <div style={{ position: "relative" }}>
       <Link to="/"  >
-      <h2 className="logo">Your logo</h2>
+        <img src={logo} alt="" className="logo" />
+      {/* <h2 className="logo">Your logo</h2> */}
       </Link>
       <div className="footer">
         <Footer />
